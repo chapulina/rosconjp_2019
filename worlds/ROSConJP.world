@@ -4641,11 +4641,11 @@
       <pose>232.87 -9.9 1.7 0.18 0 3.14</pose>
       <uri>model://slide-16</uri>
     </include>
-    <!--include>
+    <include>
       <name>slide-17</name>
       <pose>153.7 0 5 0 0 1.57</pose>
       <uri>model://slide-17</uri>
-    </include-->
+    </include>
     <!-- Sensors -->
        <include>
          <name>slide-18</name>
@@ -4787,11 +4787,11 @@
         <pose>440 0 0 0 0 0</pose>
         <uri>model://slide-44</uri>
       </include>
-      <!--include>
+      <include>
         <name>slide-45</name>
         <pose>450 0 0 0 0 0</pose>
         <uri>model://slide-45</uri>
-      </include-->
+      </include>
       <include>
         <name>slide-46</name>
         <pose>460 0 0 0 0 0</pose>
