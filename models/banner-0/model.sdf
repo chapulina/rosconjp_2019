@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+<model name='banner-0'>
+  <static>1</static>
+  <link name='link'>
+    <pose frame=''>0 0 0.45 0 -0 0</pose>
+    <visual name='top'>
+      <pose>0 0 0.77 0 -0 0</pose>
+      <geometry>
+        <box>
+          <size>1.6 0.01 0.26</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://banner-0/materials/scripts</uri>
+          <uri>model://banner-0/materials/textures</uri>
+          <name>Banners/banner_0_top</name>
+        </script>
+      </material>
+    </visual>
+    <visual name='bottom'>
+      <pose frame=''>0 0 0.045 0 -0 0</pose>
+      <geometry>
+        <box>
+          <size>1.6 0.01 0.09</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://banner-0/materials/scripts</uri>
+          <uri>model://banner-0/materials/textures</uri>
+          <name>Banners/banner_0_bottom</name>
+        </script>
+      </material>
+    </visual>
+  </link>
+</model>
+</sdf>
