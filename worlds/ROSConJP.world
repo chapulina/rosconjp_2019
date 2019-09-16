@@ -40,21 +40,16 @@
        <keyframe type='lookat' number='30'/>
        <keyframe type='lookat' number='31'/>
        <keyframe type='lookat' number='32'/>
-       <keyframe type='lookat' number='33'/>
        <keyframe type='lookat' number='34'/>
        <keyframe type='lookat' number='35'/>
        <keyframe type='lookat' number='36'/>
        <keyframe type='lookat' number='37'/>
        <keyframe type='lookat' number='38'/>
-       <keyframe type='lookat' number='39'/>
-       <keyframe type='lookat' number='40'/>
        <keyframe type='lookat' number='41'/>
        <keyframe type='lookat' number='42'/>
-       <keyframe type='lookat' number='43'/>
        <keyframe type='lookat' number='44'/>
-       <keyframe type='lookat' number='45'/>
+       <keyframe type='lookat' number='43'/>
        <keyframe type='lookat' number='46'/>
-       <keyframe type='lookat' number='47'/>
        <keyframe type='lookat' number='48' eye_offset="0 -1.5 -0.5 0 0 0"/>
      </plugin>
      <plugin name='keyboard' filename='libKeyboardGUIPlugin.so'>
@@ -4619,15 +4614,15 @@
       <pose>-27.12 33.03 2.965 0 0 -3.14</pose>
       <uri>model://slide-12</uri>
     </include>
-    <model name="mass_1">
+    <model name="pendulum_1">
       <pose>-24.7 33.26 2.11 0 -0.7 0</pose>
       <link name="link">
         <inertial>
           <mass>1</mass>
           <inertia>
-            <ixx>0.14583</ixx>
-            <iyy>0.14583</iyy>
-            <izz>0.125</izz>
+            <ixx>0.0858</ixx>
+            <iyy>0.0858</iyy>
+            <izz>0.005</izz>
           </inertia>
         </inertial>
         <visual name="visual">
@@ -4641,14 +4636,6 @@
             <ambient>0 0 0.8 0</ambient>
           </material>
         </visual>
-        <collision name="collision">
-          <geometry>
-            <cylinder>
-              <radius>0.1</radius>
-              <length>0.9</length>
-            </cylinder>
-          </geometry>
-        </collision>
       </link>
       <joint name="joint" type="revolute">
         <pose>0 0 0.4 0 0 0</pose>
@@ -4659,39 +4646,31 @@
         </axis>
       </joint>
     </model>
-    <model name="mass_10">
-      <pose>-26.87 33.26 2.11 0 -0.7 0</pose>
+    <model name="pendulum_0.5">
+      <pose>-26.87 33.26 2.31 0 -0.7 0</pose>
       <link name="link">
         <inertial>
           <mass>1</mass>
           <inertia>
-            <ixx>1.4583</ixx>
-            <iyy>1.4583</iyy>
-            <izz>1.25</izz>
+            <ixx>0.0233</ixx>
+            <iyy>0.0233</iyy>
+            <izz>0.005</izz>
           </inertia>
         </inertial>
         <visual name="visual">
           <geometry>
             <cylinder>
               <radius>0.1</radius>
-              <length>1.0</length>
+              <length>0.5</length>
             </cylinder>
           </geometry>
           <material>
             <ambient>0 0 0.8 0</ambient>
           </material>
         </visual>
-        <collision name="collision">
-          <geometry>
-            <cylinder>
-              <radius>0.1</radius>
-              <length>0.9</length>
-            </cylinder>
-          </geometry>
-        </collision>
       </link>
       <joint name="joint" type="revolute">
-        <pose>0 0 0.4 0 0 0</pose>
+        <pose>0 0 0.2 0 0 0</pose>
         <parent>world</parent>
         <child>link</child>
         <axis>
@@ -4727,145 +4706,112 @@
       <pose>97.2 20.9 0 0 0 2.5</pose>
       <uri>model://slide-17</uri>
     </include>
-<!-- TODO use poses
-         <pose>153.7 0 5 0 0 1.57</pose>
-         <pose>33.4 -43.43 1.3 0 0 0</pose>
-         <pose>37.1 42 1.3 0 0 -0.4</pose>
--->
-      <include>
-        <name>slide-24</name>
-        <pose>240 0 0 0 0 0</pose>
-        <uri>model://slide-24</uri>
-      </include>
-      <include>
-        <name>slide-25</name>
-        <pose>250 0 0 0 0 0</pose>
-        <uri>model://slide-25</uri>
-      </include>
     <!-- Rendering -->
-      <include>
-        <name>slide-26</name>
-        <pose>260 0 0 0 0 0</pose>
-        <uri>model://slide-26</uri>
-      </include>
-      <include>
-        <name>slide-27</name>
-        <pose>270 0 0 0 0 0</pose>
-        <uri>model://slide-27</uri>
-      </include>
-      <include>
-        <name>slide-28</name>
-        <pose>280 0 0 0 0 0</pose>
-        <uri>model://slide-28</uri>
-      </include>
+    <include>
+      <name>slide-24</name>
+      <pose>151.58 -43.69 0 0 0 -1.79</pose>
+      <uri>model://slide-24</uri>
+    </include>
+    <include>
+      <name>slide-25</name>
+      <pose>96.46 -21.63 4.53 0 0 1.57</pose>
+      <uri>model://slide-25</uri>
+    </include>
+    <include>
+      <name>slide-26</name>
+      <pose>33.4 -43.43 1.3 0 0 0</pose>
+      <uri>model://slide-26</uri>
+    </include>
     <!-- GUI -->
-      <include>
-        <name>slide-29</name>
-        <pose>290 0 0 0 0 0</pose>
-        <uri>model://slide-29</uri>
-      </include>
-      <include>
-        <name>slide-30</name>
-        <pose>300 0 0 0 0 0</pose>
-        <uri>model://slide-30</uri>
-      </include>
-      <include>
-        <name>slide-31</name>
-        <pose>310 0 0 0 0 0</pose>
-        <uri>model://slide-31</uri>
-      </include>
-      <include>
-        <name>slide-32</name>
-        <pose>320 0 0 0 0 0</pose>
-        <uri>model://slide-32</uri>
-      </include>
-      <include>
-        <name>slide-33</name>
-        <pose>330 0 0 0 0 0</pose>
-        <uri>model://slide-33</uri>
-      </include>
-      <include>
-        <name>slide-34</name>
-        <pose>340 0 0 0 0 0</pose>
-        <uri>model://slide-34</uri>
-      </include>
-    <!-- ign-gazebo gui -->
-      <include>
-        <name>slide-35</name>
-        <pose>350 0 0 0 0 0</pose>
-        <uri>model://slide-35</uri>
-      </include>
+    <include>
+      <name>slide-27</name>
+      <pose>37.1 42 1.3 0 0 -0.4</pose>
+      <uri>model://slide-27</uri>
+    </include>
+    <include>
+      <name>slide-28</name>
+      <pose>-41.3852 3.6832 1.84 0 0 -1.14</pose>
+      <uri>model://slide-28</uri>
+    </include>
+    <include>
+      <name>slide-29</name>
+      <pose>-35.102 3.6212 1.7825 0 0 0</pose>
+      <uri>model://slide-29</uri>
+    </include>
+    <include>
+      <name>slide-30</name>
+      <pose>-31.895 9.01 2.56 0 0 -1.57</pose>
+      <uri>model://slide-30</uri>
+    </include>
+    <include>
+      <name>slide-31</name>
+      <pose>2.499 5.747 3.4185 -0.95 0 0</pose>
+      <uri>model://slide-31</uri>
+    </include>
+    <include>
+      <name>slide-32</name>
+      <pose>2.239 6.81 1.339 0 0 0</pose>
+      <uri>model://slide-32</uri>
+    </include>
     <!-- interfaces -->
-      <include>
-        <name>slide-36</name>
-        <pose>360 0 0 0 0 0</pose>
-        <uri>model://slide-36</uri>
-      </include>
-      <include>
-        <name>slide-37</name>
-        <pose>370 0 0 0 0 0</pose>
-        <uri>model://slide-37</uri>
-      </include>
-      <include>
-        <name>slide-38</name>
-        <pose>380 0 0 0 0 0</pose>
-        <uri>model://slide-38</uri>
-      </include>
-      <include>
-        <name>slide-39</name>
-        <pose>390 0 0 0 0 0</pose>
-        <uri>model://slide-39</uri>
-      </include>
-      <include>
-        <name>slide-40</name>
-        <pose>400 0 0 0 0 0</pose>
-        <uri>model://slide-40</uri>
-      </include>
-      <include>
-        <name>slide-41</name>
-        <pose>410 0 0 0 0 0</pose>
-        <uri>model://slide-41</uri>
-      </include>
-      <include>
-        <name>slide-42</name>
-        <pose>420 0 0 0 0 0</pose>
-        <uri>model://slide-42</uri>
-      </include>
+    <include>
+      <name>slide-34</name>
+      <pose>39.30 -17.575 9.625 0 0 1.5428</pose>
+      <uri>model://slide-34</uri>
+    </include>
+    <include>
+      <name>slide-35</name>
+      <pose>38.799 -15.669 9.7223 0 0 1.57</pose>
+      <uri>model://slide-35</uri>
+    </include>
+    <include>
+      <name>slide-36</name>
+      <pose>38.7923 -19.435 9.715 0 0 1.57</pose>
+      <uri>model://slide-36</uri>
+    </include>
+    <include>
+      <name>slide-37</name>
+      <pose>23.2 -10.17 0 0 0 3.14</pose>
+      <uri>model://slide-37</uri>
+    </include>
+    <include>
+      <name>slide-38</name>
+      <pose>24.329 -13.229 5.63 -0.98 0 3.14</pose>
+      <uri>model://slide-38</uri>
+    </include>
     <!-- cloud -->
-      <include>
-        <name>slide-43</name>
-        <pose>430 0 0 0 0 0</pose>
-        <uri>model://slide-43</uri>
-      </include>
-      <include>
-        <name>slide-44</name>
-        <pose>440 0 0 0 0 0</pose>
-        <uri>model://slide-44</uri>
-      </include>
-      <include>
-        <name>slide-45</name>
-        <pose>450 0 0 0 0 0</pose>
-        <uri>model://slide-45</uri>
-      </include>
-      <include>
-        <name>slide-46</name>
-        <pose>460 0 0 0 0 0</pose>
-        <uri>model://slide-46</uri>
-      </include>
-      <include>
-        <name>slide-47</name>
-        <pose>470 0 0 0 0 0</pose>
-        <uri>model://slide-47</uri>
-      </include>
-    <!-- projects -->
-      <include>
-        <name>slide-48</name>
-        <pose>480 0 0 0 0 0</pose>
-        <uri>model://slide-48</uri>
-      </include>
+    <include>
+      <name>slide-41</name>
+      <pose>47.43 -8 10 1 0 -3.14</pose>
+      <uri>model://slide-41</uri>
+    </include>
+    <include>
+      <name>slide-42</name>
+      <pose>17.6 -22.19 26.96 0 0 1.57</pose>
+      <uri>model://slide-42</uri>
+    </include>
+    <include>
+      <name>slide-43</name>
+      <pose>11.76 -17.93 32.81 0 0 -3.14</pose>
+      <uri>model://slide-43</uri>
+    </include>
+    <include>
+      <name>slide-44</name>
+      <pose>18.098 -25.415 32.639 0 0 -3.14</pose>
+      <uri>model://slide-44</uri>
+    </include>
     <!-- timeline -->
-    <!-- Ign lula -->
+    <include>
+      <name>slide-46</name>
+      <pose>199.82 2.82 1.31 0 0 0</pose>
+      <uri>model://slide-46</uri>
+    </include>
     <!-- links -->
+    <include>
+      <name>slide-48</name>
+      <pose>180 30 8 0 0 0</pose>
+      <uri>model://slide-48</uri>
+    </include>
 
   </world>
 </sdf>
