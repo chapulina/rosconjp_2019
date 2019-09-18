@@ -1799,52 +1799,6 @@ ros2 topic echo /imu_ros2/data
   </link>
 </model>
 
-
-    <!-- South sidewalk
-         Commented out because it leaks beyond the heightmap and intersects bridges
-    <model name="sidewalk_38">
-  <static>true</static>
-  <pose>0 0 0 0 0 0</pose>
-  <link name="link">
-    <visual name="visual">
-      <geometry>
-        <polyline>
-          <height>0.15</height>
-          <point>-51.7 -51.2</point>
-          <point>-51.67552825814758 -51.354508497187474</point>
-          <point>-51.604508497187474 -51.49389262614624</point>
-          <point>-51.49389262614624 -51.604508497187474</point>
-          <point>-51.354508497187474 -51.67552825814758</point>
-          <point>-51.2 -51.7</point>
-          <point>-49.2 -51.7</point>
-          <point>-49.04549150281253 -51.67552825814758</point>
-          <point>-48.906107373853764 -51.604508497187474</point>
-          <point>-48.79549150281253 -51.49389262614624</point>
-          <point>-48.724471741852426 -51.354508497187474</point>
-          <point>-48.7 -51.2</point>
-          <point>-48.7 51.2</point>
-          <point>-48.724471741852426 51.354508497187474</point>
-          <point>-48.79549150281253 51.49389262614624</point>
-          <point>-48.906107373853764 51.604508497187474</point>
-          <point>-49.04549150281253 51.67552825814758</point>
-          <point>-49.2 51.7</point>
-          <point>-51.2 51.7</point>
-          <point>-51.354508497187474 51.67552825814758</point>
-          <point>-51.49389262614624 51.604508497187474</point>
-          <point>-51.604508497187474 51.49389262614624</point>
-          <point>-51.67552825814758 51.354508497187474</point>
-          <point>-51.7 51.2</point>
-        </polyline>
-      </geometry>
-      <material>
-        <ambient>0.2 0.2 0.2 1.0</ambient>
-      </material>
-    </visual>
-  </link>
-</model>
-
-     -->
-
     <!-- East sidewalk -->
     <model name="sidewalk_39">
   <static>true</static>
@@ -1887,51 +1841,6 @@ ros2 topic echo /imu_ros2/data
   </link>
 </model>
 
-
-    <!-- West sidewalk
-         Commented out because it leaks beyond the heightmap
-    <model name="sidewalk_40">
-  <static>true</static>
-  <pose>0 0 0 0 0 0</pose>
-  <link name="link">
-    <visual name="visual">
-      <geometry>
-        <polyline>
-          <height>0.15</height>
-          <point>-51.7 49.2</point>
-          <point>-51.67552825814758 49.04549150281253</point>
-          <point>-51.604508497187474 48.906107373853764</point>
-          <point>-51.49389262614624 48.79549150281253</point>
-          <point>-51.354508497187474 48.724471741852426</point>
-          <point>-51.2 48.7</point>
-          <point>126.2 48.7</point>
-          <point>126.35450849718748 48.724471741852426</point>
-          <point>126.49389262614623 48.79549150281253</point>
-          <point>126.60450849718748 48.906107373853764</point>
-          <point>126.67552825814758 49.04549150281253</point>
-          <point>126.7 49.2</point>
-          <point>126.7 51.2</point>
-          <point>126.67552825814758 51.354508497187474</point>
-          <point>126.60450849718748 51.49389262614624</point>
-          <point>126.49389262614623 51.604508497187474</point>
-          <point>126.35450849718748 51.67552825814758</point>
-          <point>126.2 51.7</point>
-          <point>-51.2 51.7</point>
-          <point>-51.354508497187474 51.67552825814758</point>
-          <point>-51.49389262614624 51.604508497187474</point>
-          <point>-51.604508497187474 51.49389262614624</point>
-          <point>-51.67552825814758 51.354508497187474</point>
-          <point>-51.7 51.2</point>
-        </polyline>
-      </geometry>
-      <material>
-        <ambient>0.2 0.2 0.2 1.0</ambient>
-      </material>
-    </visual>
-  </link>
-</model>
-
-     -->
 
     <!-- Buildings -->
 
@@ -4530,6 +4439,48 @@ ros2 topic echo /imu_ros2/data
       <uri>model://suv</uri>
     </include>
 
+    <!-- quadcopter UAV -->
+    <actor name='quadrotor'>
+      <pose>-36.7 1.71 40.7 0.13 -0.33 0.038</pose>
+      <link name='link'>
+        <pose frame=''>0 0 0.182466 0 -0 0</pose>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://quadrotor/meshes/quadrotor_base.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+        <script>
+          <loop>true</loop>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="square">
+             <waypoint>
+                <time>0.0</time>
+                <pose>-36.7 1.71 40.7 0.13 -0.33 0.038</pose>
+             </waypoint>
+             <waypoint>
+                <time>1.0</time>
+                <pose>-36.7 -1.01 40.7 -0.36 0.111 0.528</pose>
+             </waypoint>
+             <waypoint>
+                <time>2.0</time>
+                <pose>-39.1 -1.01 40.7 0.050 0.5959 0.55</pose>
+             </waypoint>
+             <waypoint>
+                <time>3.0</time>
+                <pose>-39.1 1.71  40.7 0.369 -0.0188 0.523</pose>
+             </waypoint>
+             <waypoint>
+                <time>4.0</time>
+                <pose>-36.7 1.71 40.7 0.13 -0.33 0.038</pose>
+             </waypoint>
+          </trajectory>
+        </script>
+    </actor>
+
     <!-- Dolly -->
     <include>
       <pose>-37 5.6 0.33 0 0 0</pose>
@@ -4552,7 +4503,7 @@ ros2 topic echo /imu_ros2/data
     <!-- ROS -->
     <include>
       <name>slide-0</name>
-      <pose>-31.97 17.09 1.99 0 0 0</pose>
+      <pose>-39 0 40 0 0 -1.57</pose>
       <uri>model://slide-0</uri>
     </include>
     <!-- ROS 2 -->
@@ -4564,7 +4515,7 @@ ros2 topic echo /imu_ros2/data
     <!-- Gazebo -->
     <include>
       <name>slide-2</name>
-      <pose>-39 0 40 0 0 -1.57</pose>
+      <pose>-31.97 17.09 1.99 0 0 0</pose>
       <uri>model://slide-2</uri>
     </include>
     <!-- Louise -->
